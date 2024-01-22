@@ -1,11 +1,12 @@
-import {StyleSheet} from 'react-native';
+import {createStyles, style} from '../../helpers/styles';
 
-export const styles = StyleSheet.create({
-  wrapper: (currentTheme: {containerBackgroundColor: string}) => ({
-    gap: 10,
-    flex: 1,
-    backgroundColor: currentTheme.containerBackgroundColor,
-    alignItems: 'center',
-    paddingTop: 50,
-  }),
+export const styles = createStyles({
+  wrapper: (currentTheme: {containerBackgroundColor: string}) =>
+    style({
+      gap: 10,
+      flex: 1,
+      backgroundColor: currentTheme.containerBackgroundColor,
+      alignItems: 'center',
+      paddingTop: 50,
+    }),
 });

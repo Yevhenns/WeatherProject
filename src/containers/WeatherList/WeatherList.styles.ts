@@ -1,6 +1,6 @@
-import {StyleSheet} from 'react-native';
+import {createStyles, style} from '../../helpers/styles';
 
-export const styles = StyleSheet.create({
+export const styles = createStyles({
   wrapper: {
     width: '100%',
     padding: 16,
@@ -9,8 +9,9 @@ export const styles = StyleSheet.create({
   weatherWrapper: {
     gap: 10,
   },
-  text: (currentTheme: {textColor: string}) => ({
-    color: currentTheme.textColor,
-    textAlign: 'center',
-  }),
+  text: (currentTheme: {textColor: string}) =>
+    style({
+      color: currentTheme.textColor,
+      textAlign: 'center',
+    }),
 });
