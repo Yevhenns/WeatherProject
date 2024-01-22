@@ -1,8 +1,6 @@
 import axios from 'axios';
 import {createAsyncThunk} from '@reduxjs/toolkit';
-
-const BASE_URL = 'http://api.weatherapi.com/v1';
-const API_KEY = 'c295ff054bdf4d32917160939240601';
+import {BASE_URL, API_KEY} from '@env';
 
 axios.defaults.baseURL = BASE_URL;
 
