@@ -7,7 +7,7 @@ import {
   getError,
   getIsLoading,
   getWeather,
-} from '../../redux/search/SearchSlice';
+} from '../../redux/search/SearchSelectors';
 import {useAppSelector} from '../../redux/hooks';
 import {styles} from './WeatherList.styles';
 

@@ -3,8 +3,8 @@ import {Text, View} from 'react-native';
 import {Input} from '../../components/Input';
 import {Button} from '../../components/Button';
 import {useAppDispatch, useAppSelector} from '../../redux/hooks';
-import {search} from '../../redux/search/SearchOperations';
-import {getInputCity} from '../../redux/search/SearchSlice';
+import {checkWeather} from '../../redux/search/SearchOperations';
+import {getInputCity} from '../../redux/search/SearchSelectors';
 import {styles} from './Search.styles';
 
 export function Search() {
@@ -12,7 +12,7 @@ export function Search() {
   const city = useAppSelector(getInputCity);
 
   const fetch = () => {
-    dispatch(search(city));
+    dispatch(checkWeather(city));
   };
 
   return (

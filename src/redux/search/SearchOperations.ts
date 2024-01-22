@@ -4,13 +4,13 @@ import {BASE_URL, API_KEY} from '@env';
 
 axios.defaults.baseURL = BASE_URL;
 
-export const search = createAsyncThunk<
+export const checkWeather = createAsyncThunk<
   FilteredResponse,
   string,
   {
     rejectValue: string;
   }
->('search', async (city, {rejectWithValue}) => {
+>('checkWeather', async (city, {rejectWithValue}) => {
   try {
     const res = await axios.get(
       `/forecast.json?q=${city}&days=14&lang=en&key=${API_KEY}`,

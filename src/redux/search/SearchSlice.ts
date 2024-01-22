@@ -1,6 +1,5 @@
 import {createSlice} from '@reduxjs/toolkit';
-import type {RootState} from '../store';
-import {search} from './SearchOperations';
+import {checkWeather} from './SearchOperations';
 
 const initialState = {
   weather: [] as Forecast | [],
@@ -28,12 +27,12 @@ export const searchSlice = createSlice({
   },
   extraReducers: builder =>
     builder
-      .addCase(search.pending, state => {
+      .addCase(checkWeather.pending, state => {
         state.isLoading = true;
         state.error = false;
       })
       .addCase(
-        search.fulfilled,
+        checkWeather.fulfilled,
         (state, action: {payload: FilteredResponse}) => {
           if (!action.payload) {
             state.error = true;
@@ -49,13 +48,15 @@ export const searchSlice = createSlice({
                 icon: item.day.condition.icon,
               };
             });
+            console.log(newArray);
+
             state.weather = newArray;
             state.city = action.payload.location.name;
             state.isLoading = false;
           }
         },
       )
-      .addCase(search.rejected, (state, action) => {
+      .addCase(checkWeather.rejected, (state, action) => {
         console.log('error');
         state.isLoading = false;
         state.error = action.payload;
@@ -63,14 +64,6 @@ export const searchSlice = createSlice({
 });
 
 export const searchReducer = searchSlice.reducer;
-
-export const getWeather = (state: RootState) => state.search.weather;
-export const getInputCity = (state: RootState) => state.search.inputCity;
-export const getCity = (state: RootState) => state.search.city;
-export const getDays = (state: RootState) => state.search.days;
-export const getIsLightTheme = (state: RootState) => state.search.isLightTheme;
-export const getIsLoading = (state: RootState) => state.search.isLoading;
-export const getError = (state: RootState) => state.search.error;
 
 export const {setDays} = searchSlice.actions;
 export const {setInputCity} = searchSlice.actions;

@@ -7,7 +7,8 @@ import {ThemeSwitcher} from '../../containers/ThemeSwitcher';
 import {darkTheme, lightTheme} from '../../styles/constants';
 import {WeatherList} from '../../containers/WeatherList';
 import {useAppDispatch, useAppSelector} from '../../redux/hooks';
-import {getIsLightTheme, toggleTheme} from '../../redux/search/SearchSlice';
+import {toggleTheme} from '../../redux/search/SearchSlice';
+import {getIsLightTheme} from '../../redux/search/SearchSelectors';
 
 export function HomeScreen() {
   const [currentTheme, setCurrentTheme] = useState(lightTheme);
