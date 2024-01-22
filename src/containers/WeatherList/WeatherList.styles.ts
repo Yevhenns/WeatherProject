@@ -9,4 +9,8 @@ export const styles = StyleSheet.create({
   weatherWrapper: {
     gap: 10,
   },
+  text: (currentTheme: {textColor: string}) => ({
+    color: currentTheme.textColor,
+    textAlign: 'center',
+  }),
 });

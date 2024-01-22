@@ -9,6 +9,7 @@ import {WeatherList} from '../../containers/WeatherList';
 import {useAppDispatch, useAppSelector} from '../../redux/hooks';
 import {toggleTheme} from '../../redux/search/SearchSlice';
 import {getIsLightTheme} from '../../redux/search/SearchSelectors';
+import {styles} from './HomeScreen.styles';
 
 export function HomeScreen() {
   const [currentTheme, setCurrentTheme] = useState(lightTheme);
@@ -29,14 +30,7 @@ export function HomeScreen() {
   }, [isLightTheme]);
 
   return (
-    <View
-      style={{
-        gap: 10,
-        flex: 1,
-        backgroundColor: currentTheme.containerBackgroundColor,
-        alignItems: 'center',
-        paddingTop: 50,
-      }}>
+    <View style={styles.wrapper(currentTheme)}>
       <ThemeSwitcher toggleSwitch={toggleSwitch} isLightTheme={isLightTheme} />
       <Search />
       <Menu />

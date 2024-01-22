@@ -36,9 +36,7 @@ export function WeatherList({currentTheme}: Theme) {
       <View style={styles.weatherWrapper}>
         {data.length > 0 && !error && (
           <>
-            <Text style={{textAlign: 'center', color: currentTheme.textColor}}>
-              Forecast for {city}
-            </Text>
+            <Text style={styles.text(currentTheme)}>Forecast for {city}</Text>
             {filteredForecast().map(item => {
               return (
                 <WeatherListItem
