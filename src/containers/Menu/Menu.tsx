@@ -17,14 +17,11 @@ export function Menu() {
       <Button onPress={() => setDaysAmount(1)}>
         <Text>Today</Text>
       </Button>
+      <Button onPress={() => setDaysAmount(2)}>
+        <Text>2 days</Text>
+      </Button>
       <Button onPress={() => setDaysAmount(3)}>
         <Text>3 days</Text>
-      </Button>
-      <Button onPress={() => setDaysAmount(7)}>
-        <Text>7 days</Text>
-      </Button>
-      <Button onPress={() => setDaysAmount(14)}>
-        <Text>14 days</Text>
       </Button>
     </View>
   );

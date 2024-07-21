@@ -24,7 +24,7 @@ export function WeatherList({currentTheme}: Theme) {
   };
 
   if (error) {
-    Alert.alert('Something wrong');
+    Alert.alert('Something went wrong');
   }
 
   if (isLoading) {
